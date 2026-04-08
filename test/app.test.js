@@ -1,5 +1,5 @@
 // ========================================================================================================
-import {saludar, despedir, estadoSistema} from "../src/app.js"
+import {saludar, despedir, estadoSistema, Sumar} from "../src/app.js"
 // ========================================================================================================
 
 function ejecutarPruebas(){
@@ -29,11 +29,11 @@ function ejecutarPruebas(){
         fallidas++;
     }
 
-    // ----------RESULTADOS FINALES----------
-    console.log ("\nResultados: " + pasadas + " pasadas; ", + fallidas + " fallidas");
-    if (fallidas > 0) {process.exit(1)}
-
-    const Sumerios = Sumar(a + b);
+    // ----------FUNCION SUMAR----------
+    const a = 2;
+    const b = 3;
+    
+    const Sumerios = Sumar(a, b);
     if (Sumerios === 5){
         console.log ("Test 3: Pasado👌: 'Sumar()' funciona en CodeRider");
         pasadas++;
@@ -42,6 +42,12 @@ function ejecutarPruebas(){
         console.log ("Test 3: Fallido👎: ", Sumerios, "en 'codeRider");
         fallidas++;
     }
+
+    // ----------RESULTADOS FINALES----------
+    console.log ("\nResultados: " + pasadas + " pasadas; ", + fallidas + " fallidas");
+    if (fallidas > 0) {process.exit(1)}
+
+    
 }
 // 1ra. Funcion a Ejecutar!
 ejecutarPruebas();
