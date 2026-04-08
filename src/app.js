@@ -1,5 +1,3 @@
-import { version } from "react";
-
 export function saludar(nombre){
     return "hola " + nombre + ", bienvenido a la aplicación de CodeRider!";
 }
@@ -18,4 +16,8 @@ export function estadoSistema(){
 
 export function Sumar(a, b) {
     return a + b;
+}
+
+export function Restar(c, d) {
+    return c + d;
 }
