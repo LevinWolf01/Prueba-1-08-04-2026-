@@ -1,10 +1,12 @@
+// ========================================================================================================
 import {saludar, despedir, estadoSistema} from "../src/app.js"
+// ========================================================================================================
 
 function ejecutarPruebas(){
     let pasadas     = 0;
     let fallidas    = 0;
 
-    // TESTEO FUNCIÓN SALUDAR
+    // ----------TESTEO FUNCIÓN SALUDAR----------
     const R1        = saludar("Rider");
     if (R1.includes("Rider")){
         console.log ("Test 1 Pasado 👍: Funcion Saludar en CodeRider es correcta!");
@@ -16,7 +18,7 @@ function ejecutarPruebas(){
         fallidas++;
     }
 
-    // FUNCION ESTADO SISTEMA
+    // ----------FUNCION ESTADO SISTEMA----------
     const actualEstado = estadoSistema()
     if (actualEstado.estado === "activo"){
         console.log ("Test 2: Pasado👌: 'estadoSistema()' funciona en CodeRider");
@@ -27,8 +29,9 @@ function ejecutarPruebas(){
         fallidas++;
     }
 
+    // ----------RESULTADOS FINALES----------
     console.log ("\nResultados: " + pasadas + " pasadas; ", + fallidas + " fallidas");
     if (fallidas > 0) {process.exit(1)}
 }
-
+// 1ra. Funcion a Ejecutar!
 ejecutarPruebas();
