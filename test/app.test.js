@@ -32,6 +32,16 @@ function ejecutarPruebas(){
     // ----------RESULTADOS FINALES----------
     console.log ("\nResultados: " + pasadas + " pasadas; ", + fallidas + " fallidas");
     if (fallidas > 0) {process.exit(1)}
+
+    const Sumerios = Sumar(a + b);
+    if (Sumerios === 5){
+        console.log ("Test 3: Pasado👌: 'Sumar()' funciona en CodeRider");
+        pasadas++;
+    }
+    else {
+        console.log ("Test 3: Fallido👎: ", Sumerios, "en 'codeRider");
+        fallidas++;
+    }
 }
 // 1ra. Funcion a Ejecutar!
 ejecutarPruebas();

@@ -15,3 +15,7 @@ export function estadoSistema(){
         message: "Sistema CodeRider funcionando Correctamente"
     };
 }
+
+export function Sumar(a, b) {
+    return a + b;
+}
