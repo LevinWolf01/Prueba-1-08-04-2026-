@@ -19,5 +19,14 @@ export function Sumar(a, b) {
 }
 
 export function Restar(c, d) {
-    return c + d;
+    return c - d;
+}
+
+export function healthCheck(){
+    return {
+        status: "ok",
+        timestamp: new Date().toISOString(),
+        servicio: "StreamFlow",
+        version: "1.0.0"
+    };
 }
