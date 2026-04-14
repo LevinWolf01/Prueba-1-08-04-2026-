@@ -23,7 +23,7 @@ export function Restar(c, d) {
 }
 
 export function healthCheck(){
-    return {
+    return{
         status: "ok",
         timestamp: new Date().toISOString(),
         servicio: "StreamFlow",
