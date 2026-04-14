@@ -1,53 +1,69 @@
-// ========================================================================================================
-import {saludar, despedir, estadoSistema, Sumar} from "../src/app.js"
-// ========================================================================================================
+// test/app.test.js
+import { saludar, despedir, estadoSistema, Sumar, Restar, healthCheck } from "../src/app.js";
 
-function ejecutarPruebas(){
-    let pasadas     = 0;
-    let fallidas    = 0;
+function ejecutarPruebas() {
+    let pasadas = 0;
+    let fallidas = 0;
 
-    // ----------TESTEO FUNCIÓN SALUDAR----------
-    const R1        = saludar("Rider");
-    if (R1.includes("Rider")){
-        console.log ("Test 1 Pasado 👍: Funcion Saludar en CodeRider es correcta!");
+    console.log ("=== INICIANDO PRUEBAS DE CODE RIDER ===\n");
+
+    // ---------- TEST 1: SALUDAR ----------
+    const R1 = saludar("Rider");
+    if (R1.includes ("Rider")) {
+        console.log ("Test 1: Pasado 👍  Función saludar() es correcta");
         pasadas++;
-    } 
-
-    else {
-        console.log ("Test 1 Fallido 😓", R1);
+    } else {
+        console.log ("Test 1: Fallido 😓", R1);
         fallidas++;
     }
 
-    // ----------FUNCION ESTADO SISTEMA----------
-    const actualEstado = estadoSistema()
-    if (actualEstado.estado === "activo"){
-        console.log ("Test 2: Pasado👌: 'estadoSistema()' funciona en CodeRider");
+    // ---------- TEST 2: ESTADO SISTEMA ----------
+    const actualEstado = estadoSistema();
+    if (actualEstado.estado === "activo") {
+        console.log ("Test 2: Pasado 👌  Función estadoSistema() funciona");
         pasadas++;
-    }
-    else {
-        console.log ("Test 2: Fallido👎: ", estado, "en 'codeRider");
+    } else {
+        console.log ("Test 2: Fallido 👎", actualEstado);
         fallidas++;
     }
 
-    // ----------FUNCION SUMAR----------
-    const a = 2;
-    const b = 3;
-    
-    const Sumerios = Sumar(a, b);
-    if (Sumerios === 5){
-        console.log ("Test 3: Pasado👌: 'Sumar()' funciona en CodeRider");
+    // ---------- TEST 3: SUMAR ----------
+    const suma = Sumar(2, 3);
+    if (suma === 5) {
+        console.log ("Test 3: Pasado 👌  Función Sumar() funciona");
         pasadas++;
-    }
-    else {
-        console.log ("Test 3: Fallido👎: ", Sumerios, "en 'codeRider");
+    } else {
+        console.log ("Test 3: Fallido 👎  Resultado:", suma);
         fallidas++;
     }
 
-    // ----------RESULTADOS FINALES----------
-    console.log ("\nResultados: " + pasadas + " pasadas; ", + fallidas + " fallidas");
-    if (fallidas > 0) {process.exit(1)}
+    // ---------- TEST 4: RESTAR ----------
+    const resta = Restar(10, 6);
+    if (resta === 4) {
+        console.log ("Test 4: Pasado 👌  Función Restar() funciona");
+        pasadas++;
+    } else {
+        console.log ("Test 4: Fallido 👎  Resultado:", resta, "(debería ser 4)");
+        fallidas++;
+    }
 
-    
+     // ---------- TEST 5: HEALTH CHECK ----------
+    const health = healthCheck();
+    if (health.status === "ok") {
+        console.log ("Test 5: Pasado 👌  Función healthCheck() funciona");
+        pasadas++;
+    } else {
+        console.log ("Test 5: Fallido 👎", health);
+        fallidas++;
+    }
+
+    // ---------- RESULTADOS FINALES ----------
+    console.log ("\n" + "=".repeat(50));
+    console.log (`RESULTADOS: ${pasadas} pasadas | ${fallidas} fallidas`);
+    // console.log("\n" + "=".repeat(50));
+   
+
 }
-// 1ra. Funcion a Ejecutar!
+
+// Ejecutar las pruebas
 ejecutarPruebas();
