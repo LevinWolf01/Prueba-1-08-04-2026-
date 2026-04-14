@@ -60,7 +60,7 @@ function ejecutarPruebas() {
     // ---------- RESULTADOS FINALES ----------
     console.log ("\n" + "=".repeat(50));
     console.log (`RESULTADOS: ${pasadas} pasadas | ${fallidas} fallidas`);
-    // console.log("\n" + "=".repeat(50));
+    console.log("=".repeat(50));
    
 
 }
