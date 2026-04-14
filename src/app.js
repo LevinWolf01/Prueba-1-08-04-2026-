@@ -23,10 +23,10 @@ export function Restar(c, d) {
 }
 
 export function healthCheck(){
-     return null 
-    //     status: "ok",
-    //     timestamp: new Date().toISOString(),
-    //     servicio: "StreamFlow",
-    //     version: "1.0.0"
-    // };
+    return{
+        status: "ok",
+        timestamp: new Date().toISOString(),
+        servicio: "StreamFlow",
+        version: "1.0.0"
+    };
 }
