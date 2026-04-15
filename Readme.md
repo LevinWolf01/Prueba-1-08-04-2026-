@@ -15,23 +15,7 @@
 <br>
 
 
-| Snake Eating Contributions in the last year |
+| Mira we! una serpiente! ta mamalona no? |
 | ------------------------------------------|
 | ![snakkeee](https://github.com/user-attachments/assets/767354e9-fe1e-4009-b421-2f49388bfda5) | 
-
-
-
-
-
-<br>
-<br>
-
-<div align="Center">
-
-| Most Lang |
-| ----------|
-| ![CtorW's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=CtorW&theme=default&show_icons=true&hide_border=true&layout=compact) |
-| <img src="https://github-profile-trophy.vercel.app/?username=CtorW"> |
-
-</div>
 
