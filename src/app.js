@@ -23,10 +23,20 @@ export function Restar(c, d) {
 }
 
 export function healthCheck(){
-    return{
+    return {
         status: "ok",
         timestamp: new Date().toISOString(),
         servicio: "StreamFlow",
         version: "1.0.0"
     };
 }
+// Funcion Factorial de un valor fijo: 5
+
+export function factorial(n) {
+    if (n === 0 || n === 1) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+
+
