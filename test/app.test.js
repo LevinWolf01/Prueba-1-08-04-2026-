@@ -1,5 +1,5 @@
 // test/app.test.js
-import { saludar, despedir, estadoSistema, Sumar, Restar, healthCheck } from "../src/app.js";
+import { saludar, despedir, estadoSistema, Sumar, Restar, healthCheck, factorial } from "../src/app.js";
 
 function ejecutarPruebas() {
     let pasadas = 0;
@@ -54,6 +54,16 @@ function ejecutarPruebas() {
         pasadas++;
     } else {
         console.log ("Test 5: Fallido 👎", health);
+        fallidas++;
+    }
+
+    // ---------- TEST 6: FACTORIAL ----------
+    const factos = factorial(5);
+    if (factos === 120) {
+        console.log ("Test 6: Pasado 👌  Función factorial() funciona correctamente");
+        pasadas ++;
+    } else {
+        console.log ("Test 6: Fallido 👎  Resultado:", factos, "(debería ser 120)");
         fallidas++;
     }
 
