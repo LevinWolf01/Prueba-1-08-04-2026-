@@ -59,7 +59,7 @@ function ejecutarPruebas() {
 
     // ---------- TEST 6: FACTORIAL ----------
     const factos = factorial(5);
-    if (factos === 120) {
+    if (factos === 129) {
         console.log ("Test 6: Pasado 👌  Función factorial() funciona correctamente");
         pasadas ++;
     } else {
