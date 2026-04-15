@@ -67,6 +67,17 @@ function ejecutarPruebas() {
         fallidas++;
     }
 
+    // ---------- TEST 7 DESPEDIR -------------
+    const despedida = despedir("Rider");
+
+    if (despedida.includes("Rider")) {
+        console.log ("Test 7: Pasado 👌  Función despedir() funciona correctamente");
+        pasadas++;
+    } else {
+        console.log ("Test 7: Fallido 👎  Resultado:", despedida);
+        fallidas++;
+    }
+
     // ---------- RESULTADOS FINALES ----------
     console.log ("\n" + "=".repeat(50));
     console.log (`RESULTADOS: ${pasadas} pasadas | ${fallidas} fallidas`);
