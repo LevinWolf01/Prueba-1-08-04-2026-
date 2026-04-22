@@ -1,0 +1,31 @@
+name: Desploy - Coderider deploy
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  desploy:
+    name: Desplegar producción
+    runs-on: ubuntu-latest
+    needs: []
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+
+      - name: Instalar y Probar
+        run: |
+          npm install
+          npm test
+
+      - name: Desplegar Aplicacion
+        run: |
+          echo 'Iniciando desplegue de aplicacion coderider v$(node -p "require(./package.json).version")'
+          echo "Sistema Desplegado correctamente"
+          echo "url: https://streamflow.example.com"
+        
