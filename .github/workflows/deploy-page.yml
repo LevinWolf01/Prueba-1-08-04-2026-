@@ -1,0 +1,39 @@
+name: Deploy para codeRider
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-page@v4
+
+      - name: Upload Artifacts
+        uses: actions/upload-page-artifact@v3
+        with:
+          path: "."
+
+      - name: Deploy Github Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Show Deployment URL
+        run: |
+          echo "Sitio en Producción 👍"
+          echo "Deployment URL: ${{ steps.deployment.outputs.page_url }}"
