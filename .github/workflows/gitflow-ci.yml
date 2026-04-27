@@ -1,6 +1,15 @@
 name: CI - GitFlow coderider
 
 on: 
-  Feature:
-    branches: [develop]
-  Release:
+  push:
+    branches: [develop, master]
+  pull_request:
+    branches: [develop, master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run tests
+        run: echo "Running tests"
